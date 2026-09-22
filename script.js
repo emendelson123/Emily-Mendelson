@@ -41,37 +41,17 @@ const revealItems = document.querySelectorAll('.reveal');
 if (prefersReducedMotion || !('IntersectionObserver' in window)) {
   revealItems.forEach((item) => item.classList.add('visible'));
 } else {
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
+  const observer = new IntersectionObserver(
+    (entries, io) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          io.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.1, rootMargin: '0px 0px -30px' }
+    { threshold: 0.12, rootMargin: '0px 0px -32px' }
   );
-  revealItems.forEach((item) => revealObserver.observe(item));
-}
 
-const sections = document.querySelectorAll('main section[id]');
-const navLinks = nav ? [...nav.querySelectorAll('a[href^="#"]')] : [];
-
-if ('IntersectionObserver' in window && navLinks.length) {
-  const sectionObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        navLinks.forEach((link) => {
-          const isCurrent = link.getAttribute('href') === `#${entry.target.id}`;
-          link.classList.toggle('active', isCurrent);
-          if (isCurrent) link.setAttribute('aria-current', 'location');
-          else link.removeAttribute('aria-current');
-        });
-      });
-    },
-    { rootMargin: '-35% 0px -55% 0px' }
-  );
-  sections.forEach((section) => sectionObserver.observe(section));
+  revealItems.forEach((item) => observer.observe(item));
 }
