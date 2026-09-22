@@ -2,6 +2,11 @@
 
 A responsive personal portfolio website focused on healthcare strategy, operations, behavioral health, public health, and leadership.
 
+## Update timestamps
+
+- **Last README update:** September 22, 2026 at 9:40 AM CDT
+- **Latest GitHub push:** September 22, 2026 at 9:40 AM CDT
+
 ## Files
 
 - `index.html` — semantic page structure and portfolio content
