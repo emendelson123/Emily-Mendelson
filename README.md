@@ -4,8 +4,8 @@ A responsive portfolio website highlighting Emily Mendelson’s experience in he
 
 ## Update timestamps
 
-- **Last README update:** September 22, 2026 at 9:45 AM CDT
-- **Latest GitHub push:** September 22, 2026 at 9:45 AM CDT
+- **Last README update:** September 22, 2026 at 10:00 AM CDT
+- **Latest GitHub push:** September 22, 2026 at 10:00 AM CDT
 
 ## What is included
 
@@ -14,13 +14,19 @@ A responsive portfolio website highlighting Emily Mendelson’s experience in he
 - Campus leadership and service experience
 - Education, honors, relevant coursework, skills, and professional interests
 - Direct email, LinkedIn, and GitHub links
-- Responsive layouts, accessible navigation, reduced-motion support, and scroll-aware section states
+- A real professional headshot in the biography section
+- A cohesive light-blue and white visual system
+- Responsive layouts, accessible navigation, image alternative text, reduced-motion support, and scroll-aware section states
+- Search and sharing metadata, a canonical URL, a sitemap, robots directives, and a custom favicon
 
 ## Files
 
 - `index.html` — semantic page structure and portfolio content
 - `styles.css` — responsive visual design and accessibility states
 - `script.js` — mobile navigation, scroll effects, active navigation, and reveal animations
+- `emily-mendelson-headshot.jpg` — optimized portfolio portrait with fixed intrinsic dimensions
+- `favicon.svg` — custom browser-tab icon
+- `robots.txt` and `sitemap.xml` — search engine discovery files
 
 ## GitHub Pages
 

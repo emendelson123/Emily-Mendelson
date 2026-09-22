@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emendelson123.github.io/Emily-Mendelson/sitemap.xml
