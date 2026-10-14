@@ -22,7 +22,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261013-iphone">
+  <link rel="stylesheet" href="styles.css?v=20261013-mobile-fix-2024">
+  <style>
+    /* Keep the hero readable even while Safari refreshes a cached stylesheet. */
+    @media (max-width: 850px) {
+      html { -webkit-text-size-adjust: 100%; }
+      html, body { max-width: 100%; overflow-x: clip; }
+      .hero { padding-top: 30px; overflow-x: clip; }
+      .hero .container { width: calc(100% - 32px); max-width: 100%; }
+      .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+      .hero-copy, .hero-panel { min-width: 0; max-width: 100%; }
+      .hero h1 { font-size: clamp(2.2rem, 9.2vw, 4.25rem); line-height: 1.02; overflow-wrap: anywhere; }
+      .hero-lede { font-size: clamp(1rem, 3.7vw, 1.11rem); line-height: 1.55; }
+      .hero-actions { display: flex; flex-direction: column; align-items: stretch; }
+      .hero-actions .button { width: 100%; max-width: 100%; min-width: 0; white-space: normal; }
+    }
+  </style>
   <script defer src="script.js"></script>
   <script type="application/ld+json">
   {
