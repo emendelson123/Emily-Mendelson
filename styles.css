@@ -352,3 +352,49 @@ img, video { max-width: 100%; }
   .stat-grid div { padding: 12px; }
   .education-header { gap: 12px; }
 }
+
+/* iPhone portrait: use the actual available viewport width rather than desktop sizes. */
+@media (max-width: 600px) {
+  html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+  .container { width: calc(100% - 32px); max-width: none; }
+  .hero-grid, .split-layout, .education-layout, .skills-layout,
+  .experience-item, .education-columns, .leadership-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero-grid, .split-layout, .education-layout, .skills-layout { gap: 30px; }
+  .hero { padding-top: 32px; }
+  .hero h1 {
+    font-size: clamp(2.75rem, 12vw, 4.4rem);
+    line-height: 1;
+    letter-spacing: -.065em;
+    max-width: 100%;
+  }
+  .hero-lede { font-size: 1.05rem; line-height: 1.55; }
+  .eyebrow { font-size: .69rem; letter-spacing: .08em; }
+  h2 { font-size: clamp(2rem, 8.6vw, 3rem); letter-spacing: -.045em; }
+  .contact-wrap h2 { font-size: clamp(2.05rem, 8.6vw, 3.2rem); }
+  .contact-wrap > p:not(.section-number) { font-size: 1rem; }
+  .hero-panel, .education-card, .education-mini, .leadership-card { width: 100%; min-width: 0; padding: 22px; }
+  .hero-panel { border-radius: 22px; }
+  .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat-grid div { min-width: 0; }
+  .hero-proof { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-proof p { min-width: 0; }
+  .profile-title, .education-card h3, .education-mini h3 { overflow-wrap: anywhere; }
+  .card-topline { flex-wrap: wrap; gap: 5px 12px; }
+  .location-line { align-items: flex-start; }
+  .location-line span { margin-top: 9px; }
+  .experience-content h3 { overflow-wrap: anywhere; }
+  .education-header { grid-template-columns: minmax(0, 1fr); }
+  .education-columns { gap: 24px; }
+  .bio-photo { width: 100%; max-width: 390px; }
+  .skill-pills span { max-width: 100%; }
+  .site-nav { left: 16px; right: 16px; }
+  .button { min-width: 0; max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+  .hero-actions, .contact-actions { display: flex; flex-direction: column; align-items: stretch; }
+  .hero-actions .button, .contact-actions .button { width: 100%; }
+}
+@media (max-width: 360px) {
+  .container { width: calc(100% - 24px); }
+  .hero h1 { font-size: clamp(2.55rem, 11.5vw, 3.35rem); }
+  .hero-panel, .education-card, .education-mini, .leadership-card { padding: 18px; }
+  .section { padding: 52px 0; }
+}
