@@ -308,3 +308,47 @@ h2 {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Phone and small-screen improvements */
+html { overflow-x: clip; }
+body { overflow-wrap: break-word; }
+img, video { max-width: 100%; }
+.hero-grid > *, .split-layout > *, .education-layout > *, .skills-layout > *,
+.experience-item > *, .education-header > * { min-width: 0; }
+.location-line span { flex: 0 0 8px; }
+@media (max-width: 760px) {
+  html { scroll-padding-top: 78px; }
+  .site-header { -webkit-backdrop-filter: blur(16px); }
+  .site-nav { max-height: calc(100dvh - 82px); overflow-y: auto; overscroll-behavior: contain; }
+  .site-nav a { min-height: 46px; display: flex; align-items: center; }
+  .menu-toggle { min-width: 44px; min-height: 44px; }
+  .hero { padding-top: 44px; }
+  .hero h1 { font-size: clamp(3.1rem, 17vw, 5.6rem); letter-spacing: -.07em; line-height: .93; overflow-wrap: normal; }
+  .hero-lede { font-size: 1.1rem; }
+  h2 { font-size: clamp(2.15rem, 9vw, 3.6rem); overflow-wrap: anywhere; }
+  .contact-wrap h2 { font-size: clamp(2.45rem, 10vw, 4.5rem); }
+  .hero-actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .hero-actions .button, .contact-actions .button { width: 100%; min-height: 48px; text-align: center; }
+  .hero-panel { border-radius: 22px 22px 0 0; }
+  .hero-proof p { padding: 15px 10px; font-size: .78rem; line-height: 1.4; }
+  .section-heading { gap: 18px; margin-bottom: 32px; }
+  .section { padding: 64px 0; }
+  .experience-item { padding: 30px 0; }
+  .experience-content h3 { font-size: 1.45rem; }
+  .bio-photo { margin-top: 26px; }
+  .leadership-card, .leadership-card.featured { min-height: 0; }
+  .leadership-card h3 { font-size: 2rem; margin-top: 22px; }
+  .leadership-card ul { margin-top: 18px; }
+  .education-columns { gap: 26px; }
+  .footer-wrap { gap: 6px; }
+}
+@media (max-width: 390px) {
+  .container { width: calc(100% - 30px); }
+  .hero h1 { font-size: clamp(2.9rem, 15.5vw, 4rem); }
+  .hero-panel, .education-card, .education-mini, .leadership-card { padding: 20px; }
+  .profile-title { font-size: 1.06rem; }
+  .card-topline { flex-wrap: wrap; gap: 4px 12px; }
+  .stat-grid { gap: 8px; }
+  .stat-grid div { padding: 12px; }
+  .education-header { gap: 12px; }
+}
