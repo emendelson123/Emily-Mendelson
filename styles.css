@@ -398,3 +398,77 @@ img, video { max-width: 100%; }
   .hero-panel, .education-card, .education-mini, .leadership-card { padding: 18px; }
   .section { padding: 52px 0; }
 }
+
+
+/* iPhone portrait and narrow-screen width fix (Oct 13, 2026).
+   Keep content within the visual viewport; vertical scrolling is intentional. */
+html { -webkit-text-size-adjust: 100%; }
+@media (max-width: 850px) {
+  html, body { width: 100%; max-width: 100%; overflow-x: clip; }
+  body { -webkit-text-size-adjust: 100%; }
+  main, header, footer, section { max-width: 100%; min-width: 0; }
+  .container { width: calc(100% - 32px); max-width: 100%; margin-left: auto; margin-right: auto; }
+  .hero-grid, .split-layout, .education-layout, .skills-layout,
+  .experience-item, .leadership-grid, .education-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+  .hero-grid > *, .hero-copy, .hero-panel, .section-intro, .section-heading > *,
+  .about-copy, .education-stack, .education-card, .skills-layout > *,
+  .experience-content, .leadership-card { width: auto; min-width: 0; max-width: 100%; }
+  .hero { padding-top: 30px; overflow-x: clip; }
+  .hero h1 {
+    font-size: clamp(2.2rem, 9.2vw, 4.25rem);
+    line-height: 1.02;
+    letter-spacing: -.065em;
+    margin: 13px 0 20px;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .eyebrow { font-size: .69rem; line-height: 1.5; letter-spacing: .08em; overflow-wrap: anywhere; }
+  .hero-lede { font-size: clamp(1rem, 3.7vw, 1.11rem); line-height: 1.55; max-width: 100%; }
+  .hero-actions, .contact-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 11px;
+    margin-top: 25px;
+  }
+  .hero-actions .button, .contact-actions .button {
+    display: flex;
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 50px;
+    padding: 12px 16px;
+    white-space: normal;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+  .hero-panel, .education-card, .education-mini, .leadership-card {
+    box-sizing: border-box;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  .hero-proof { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-proof > * { min-width: 0; overflow-wrap: anywhere; }
+  .section-heading { flex-direction: column; align-items: stretch; }
+  .experience-content h3, .leadership-card h3, .education-card h3,
+  .education-mini h3, h2, .profile-title, .location-line {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+  .education-header { grid-template-columns: minmax(0, 1fr); }
+  .card-topline { flex-wrap: wrap; }
+  img, iframe, video, svg { max-width: 100%; }
+}
+@media (max-width: 380px) {
+  .container { width: calc(100% - 28px); }
+  .hero h1 { font-size: clamp(2.05rem, 9vw, 2.65rem); }
+  .hero-panel, .education-card, .education-mini, .leadership-card { padding: 19px; }
+}
