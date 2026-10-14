@@ -472,3 +472,26 @@ html { -webkit-text-size-adjust: 100%; }
   .hero h1 { font-size: clamp(2.05rem, 9vw, 2.65rem); }
   .hero-panel, .education-card, .education-mini, .leadership-card { padding: 19px; }
 }
+
+/* Desktop and laptop layout: overrides apply only to wide screens. */
+@media (min-width: 981px) {
+  .container { width: min(calc(100% - 64px), var(--max)); }
+  .nav-wrap { gap: 24px; }
+  .site-nav { display: flex; flex-direction: row; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+  .menu-toggle { display: none; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(300px, .72fr); gap: clamp(30px, 4vw, 70px); align-items: end; }
+  .hero h1 { font-size: clamp(4.4rem, 8.8vw, 8rem); overflow-wrap: normal; }
+  .hero-actions, .contact-actions { flex-direction: row; flex-wrap: wrap; width: auto; }
+  .hero-actions .button, .contact-actions .button { width: auto; flex: initial; }
+  .split-layout { grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); }
+  .education-layout, .skills-layout { grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); }
+  .experience-item { grid-template-columns: minmax(0, .34fr) minmax(0, 1fr); }
+  .leadership-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .education-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 761px) and (max-width: 980px) {
+  .container { width: min(calc(100% - 48px), var(--max)); }
+  .hero h1 { font-size: clamp(4.2rem, 11vw, 7rem); }
+  .hero-actions { display: flex; flex-direction: row; flex-wrap: wrap; }
+  .hero-actions .button { width: auto; }
+}
